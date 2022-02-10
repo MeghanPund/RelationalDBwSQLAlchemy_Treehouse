@@ -23,7 +23,7 @@ class Animal(Base):
         Habitat = {self.habitat}
         '''
 
-        
+
 class Logbook(Base):
     __tablename__ = "logbook"
 
@@ -39,6 +39,9 @@ class Logbook(Base):
         Notes = {self.notes}
         '''
 
+
+if __name__ == '__main__':
+    Base.metadata.create_all(engine)
 
 # Animals
 # ID | Name | Habitat
