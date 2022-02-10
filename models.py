@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, delete
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 
@@ -14,7 +14,8 @@ class Animal(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     habitat = Column(String)
-    logs = relationship("Logbook", back_populates="animal")
+    logs = relationship("Logbook", back_populates="animal",
+                        cascade="all, delete, delete-orphan")
 
     def __repr__(self):
         return f'''
