@@ -43,9 +43,3 @@ class Logbook(Base):
 
 if __name__ == '__main__':
     Base.metadata.create_all(engine)
-
-# Animals
-# ID | Name | Habitat
-
-# Zookeeper log
-# ID | Animal ID *foreign key | Notes
